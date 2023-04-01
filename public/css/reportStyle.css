@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* @font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/museo_sans/Museo-Sans.ttf') }}) format("truetype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/museo_sans/Museo-Sans-Bold.ttf') }}) format("truetype");
+    font-style: bold;
+} */
+
+@font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/Museo_Sans_TTF/MuseoSans_300.ttf') }}) format("truetype");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/Museo_Sans_TTF/MuseoSans_700.ttf') }}) format("truetype");
+    font-style: bold;
+}
+
+@font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/Museo_Sans_TTF/MuseoSans_300_Italic.ttf') }}) format("truetype");
+    font-style: italic;
+}
+@font-face {
+    font-family: "Museo Sans";
+    src: url({{ storage_path('fonts/Museo_Sans_TTF/MuseoSans_700_Italic.ttf') }}) format("truetype");
+    font-style: italic-bold;
+}
+
+body {
+    font-family: Arial;
+    font-size: 10px;
+    line-height: 1.15;
+}
+
+@page {
+    width:    21.8cm;
+    height:   28cm;
+    margin-top: 3.7cm;
+    margin-bottom: 2.5cm;
+    margin-left: 2.54cm;
+    margin-right: 2.54cm;
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    font-size: 10;
+    text-align: center;
+    line-height : 10px;
+    margin-bottom: -55px;
+    bottom: 0;
+    line-height: 1.15;
+}
+
+header{
+    position: fixed;
+    text-align: start;
+    top: 0;
+    margin-top: -95px
+}
+
+.qrCode{
+    position: fixed;
+    text-align: end;
+    top: 0;
+    margin-left: 500px;
+    margin-top: -100px;
+}
+
+header img{
+    height: 100px;
+    width: auto;
+    margin-left: -50px;
+}
+
+.text-center
+{
+    vertical-align: top;
+    text-align: center;
+}
+
+.firmas /*alineamiento horizontal y vertical */
+{
+    page-break-inside: avoid;
+    width: 100%;
+    vertical-align: top;
+    text-align: center;
+}
+
+.firmas p /* para la linea de firma hay que cambiar el tipo de letra por que si no sale cortada la linea */
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.firmas td
+{
+    width: 80%;
+    vertical-align: top;
+    text-align: center;
+}
+
+.justify
+{
+    text-align: justify;
+}
+
+#watermark {
+    position: fixed;
+    bottom:   0px;
+    left:     -100px;
+    /** El ancho y la altura pueden cambiar
+        según las dimensiones de su membrete
+    **/
+    width:    21.8cm;
+    height:   28cm;
+
+    /** Tu marca de agua debe estar detrás de cada contenido **/
+    z-index:  -1000;
+}
