@@ -1,0 +1,57 @@
+#login-boton{
+    width: 50%;
+    border-radius: 20px !important;
+    margin: auto;
+    height: 43px;
+    margin-top: 10px;
+    background-color: #01A96D;
+    color: white;
+    border: none;
+}
+
+.div-ingresar{
+    display: flex;
+    justify-content: center;
+}
+
+.form-label{
+    color: black;
+}
+
+#titulo{
+    font-size: 35px;
+    color: black;
+}
+
+#lblRecuperar{
+    text-align: end;
+    color: black;
+    margin-left: auto;
+    width: 100%;
+}
+
+
+.bg-login-image {
+    background: url('../images/login-image.jpg');
+    background-position: center;
+    background-size:cover;
+}
+
+@media (min-width: 1200px) and (max-height: 1000px) {
+    #container-login{
+        min-height: 85vh;
+    }
+}
+
+@media (min-width: 1200px) and (min-height: 1000px) {
+    #container-login{
+        min-height: 60vh;
+    }
+}
+
+#container-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}

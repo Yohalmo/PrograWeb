@@ -1,6 +1,9 @@
 @extends('templates.html_page')
 @section('Data')
-@include('templates.navbar')
+
+@if (isset($narbar))
+    @include('templates.navbar')
+@endif
 
 <div id="layoutSidenav">
     @include('templates.sidebar')

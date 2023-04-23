@@ -1,9 +1,4 @@
 
-.colorSea{
-    background-color: rgba(41, 54, 67,0.92) !important;
-    color: white !important;
-}
-
 select {
     width: 100%;
     border: 1px solid #efefef;
@@ -20,37 +15,6 @@ select {
     border-radius: 4px;
   }
 
-.imgBanner{
-    width: 80%;
-}
-
-.colorSeaText{
-    color: rgb(41, 54, 67) !important;
-}
-
-.btn-outline-sea{
-    color: rgb(41, 54, 67) !important;
-    background-color: #f8f9fc!important;
-    border-color: rgba(41, 54, 67, 0.16) !important;
-
-}
-
-.grisNeutro{
-    background-color: #747475 !important;
-    color: white !important;
-}
-
-.grisUno{
-    background-color: #464B50 !important;
-    color: white !important;
-}
-
-
-.btn-outline-sea:hover{
-    background-color: rgb(41, 54, 67) !important;
-    color: #f8f9fc!important;
-}
-
 .whiteSmoke{
     background-color: whitesmoke !important;
 }
@@ -59,17 +23,8 @@ select {
     color: #000;
 }
 
-.borderSea{
-    border-color: rgb(41, 54, 67) !important;
-    border-width: 2px !important;
-}
-
 .cursor {
     cursor: pointer;
-}
-
-#map {
-    height: 500px;
 }
 
 .form-label.required:after {
@@ -78,54 +33,31 @@ select {
     color: #d63939;
 }
 
-.fabb {
-    z-index: 5;
-    position: fixed;
-    right: 0px;
-    bottom: 10px;
-}
-
-
-
-@media print{
-
-    .divPrint{
-        flex: 0 0 100%!important;
-        max-width: 100%!important;
-        margin: 0px!important;
-        padding: 0px!important;
-        box-shadow: 0!important;
-        border: 0!important;
-    }
-
-}
-
-
-.float-button {
-    width: 70px;
-    height: 70px;
-    background-color:rgb(41, 54, 67);
-    border-radius: 50%;
-    z-index: 5;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-}
-
 .scroll{
     overflow-y: scroll;
 }
 
-.loading-gif {
-    background-image: url("/images/pageload-spinner.gif");
-    background-repeat: no-repeat;
-    background-color: #303745;
-    display: block;
-    width: 100%;
-    height: 60px;
-    background-position: 50% 50%;
+.main-color{
+    background-color: #8D525A;
 }
 
 .error-seccion{
     background-color: #FF7478 !important;
+}
+
+.altura-total{
+    min-height: 100vh;
+}
+
+.input-form{
+    height: 38px;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+
+.ancho-total{
+    width: 100%;
 }
