@@ -27,7 +27,7 @@
 
     @yield('scriptsHeader')
     </header>
-    <body class="nav-fixed p-0 {{ $StylesBody ?? '' }} {{  isMobileDevice() ? '' : 'sidebar-toggled sidenav-toggled' }}">
+    <body class="nav-fixed p-0 {{ $StylesBody ?? 'bg-white' }} {{  isMobileDevice() ? '' : 'sidebar-toggled sidenav-toggled' }}">
 
         @if (session('info'))
             <div class="alert alert-warning">
