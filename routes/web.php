@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,6 @@ Route::get('/registro', [UserController::class, 'Registro'])->name('usuario.regi
 
 Route::get('/carrito', [ShoppingController::class, 'index'])->name('shopping-car');
 Route::get('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
+
+
+Route::get('/producto',[ProductsController::class,'Producto'])->name('Products-purchase');
