@@ -35,49 +35,6 @@ $('body').on('keyup', '.telefono', function(){
     }
 });
 
-/*$('body').on('change', 'input[type="file"]',function () {
-    var ext = $(this).val().split('.').pop();
-
-    if ($(this).val() != '') {
-        if (ext != "pdf" && ext != "png" && ext != "jpg" && ext && 'jpeg') {
-            $(this).val('');
-            ShowAlert('Error', 'Formato de documento invalido', 'error');
-        }
-    }
-});*/
-
-
-function IniciarChat(urlChat){
-
-    chatId = setInterval(() => {
-
-        let ChatsActivos = Array();
-        let Mensajes = Array();
-        let SinChat = Array();
-
-        $(".chatPermisos").each(function() {
-            ChatsActivos.push($(this).attr('permiso'));
-
-            var mensajesChat = $(`#${ $(this).attr('id') } .chatItem`).toArray();
-            Mensajes.push( $(mensajesChat[ mensajesChat.length -1 ]).attr('ultimoMensaje')  );
-        });
-
-        $(".data-permiso").each(function() {
-            SinChat.push($(this).attr('permiso'));
-        });
-
-        ChatsActivos = ChatsActivos.join('-');
-        Mensajes = Mensajes.join('-');
-        SinChat = SinChat.join('-');
-
-        MakeRequestData(urlChat, '#Divscripts', false, '', 'POST', 2, '', false, false,
-        [`permisos/${ChatsActivos}`, `mensajes/${Mensajes}`, `SinChat/${SinChat}`]);
-    }, 15000);
-}
-
-function StopChat(){
-    clearInterval(chatId);
-}
 
 function Buscador(ruta, itemReplace, item, keyCode){
     if(keyCode != 13) return;
@@ -85,11 +42,6 @@ function Buscador(ruta, itemReplace, item, keyCode){
     let url;
     url = $(item).val() != '' ? `${ruta}/` + $(item).val() :  ruta;
     MakeRequestData(url , itemReplace, true);
-}
-
-function LoadPage(url){
-    urlBack = url;
-    MakeRequestData(url, '#bodyContent', true);
 }
 
 function verPass(id) {
@@ -250,7 +202,7 @@ function MakeRequestData(Url, ItemReplace, HideLoad = false, ModalName = '', typ
     }else{
         if(IdForm.includes('##')){
             IdForm = IdForm.replace('##', '#');
-        }else if(ValidarForm(IdForm)){ return; }
+        }else if(IdForm != '' && ValidarForm(IdForm)){ return; }
 
         let DataSend = getDataRequest(IdForm, params);
         if(HideLoad) LoadingAlert();

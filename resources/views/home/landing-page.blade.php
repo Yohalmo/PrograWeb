@@ -1,4 +1,4 @@
-@extends('templates.MainTemplate')
+@extends('templates.MainTemplate', ['noNavbar' => 'inicio-page'])
 
 @section('body')
 
