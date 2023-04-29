@@ -1,7 +1,19 @@
-<nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white shadow-none" id="sidenavAccordion">
-    <button class="btn btn-icon text-white order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i style="width: 30px; height: 30px;" data-feather="menu"></i></button>
-    <a class="pe-3 ps-1 ps-lg-12 text-truncate text-white showtittle max-lines-1" href="#"><center><strong></strong></center></a>
-    <a class="pe-3 ps-1 ps-lg-12 text-truncate text-white showsmalltittle max-lines-1" href="#"><center><strong></strong></center></a>
+<nav class="topnav navbar navbar-expand shadow justify-content-between
+ justify-content-sm-start navbar-light bg-white shadow-none transparente"
+ id="sidenavAccordion" style="background-color: rgba(255, 255, 255, 0) !important;">
+
+    @can('ver-sidebar')
+        <button class="btn btn-icon order-1 order-lg-0 me-2 ms-lg-2 me-lg-0"
+            id="sidebarToggle">
+            <i style="width: 30px; height: 30px;" data-feather="menu"></i>
+        </button>
+    @endcan
+
+    <div class="position-relative me-2 ms-2 card bg-white" style="border-radius:20px">
+        <div class="card-body ps-3 pe-3 pt-1 pb-1 text-black">
+            <strong>Muebles y diseños el roble</strong>
+        </div>
+    </div>
 
     <ul class="navbar-nav align-items-center ms-auto">
         <li class="nav-item no-caret d-none d-sm-block d-none me-3 text-white">
@@ -10,13 +22,17 @@
 
         <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
             @if (Session::has('user-info'))
-                <li class="nav-item no-caret d-none d-sm-block d-none me-3 ">
-                    <b class="fw-bolder" style="color:white">
-                        {{ Session::get('user-info')->NombresUsuaro . ' ' . Session::get('user-info')->ApellidosUsuario }} </b>
+                <li class="nav-item no-caret d-none d-sm-block d-none me-3 text-black">
+                    <div class="card shadow-none" style="border-radius:20px">
+                        <div class="card-body ps-3 pe-3 pt-1 pb-1">
+                            <b class="fw-bolder">
+                                {{ Session::get('user-info')->NombresUsuario . ' ' . Session::get('user-info')->ApellidosUsuario }} </b>
+                        </div>
+                    </div>
                 </li>
 
                 <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
-                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle circle " id="navbarDropdownUserImage"
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle circle bg-white" id="navbarDropdownUserImage"
                         href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"><i class="fas fa-user text-black"></i>
                     </a>
