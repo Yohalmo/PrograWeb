@@ -10,7 +10,43 @@
 
         <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
             @if (Session::has('user-info'))
+                <li class="nav-item no-caret d-none d-sm-block d-none me-3 ">
+                    <b class="fw-bolder" style="color:white">
+                        {{ Session::get('user-info')->NombresUsuaro . ' ' . Session::get('user-info')->ApellidosUsuario }} </b>
+                </li>
 
+                <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle circle " id="navbarDropdownUserImage"
+                        href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"><i class="fas fa-user text-black"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
+                        aria-labelledby="navbarDropdownUserImage">
+                        <h6 class="dropdown-header d-flex align-items-center">
+                            <div class="card rounded-circle shadow-none me-2 border-dark">
+                                <div class="card-body">
+                                    <i class="fas fa-user text-black"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-details-name">{{ Session::get('user-info')->NombresUsuario }}
+                                </div>
+                            </div>
+                        </h6>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                            <div class="text-center p-1"><i class="fas fa-user"></i> &nbsp; Editar información</div>
+                        </a>
+                        <a class="dropdown-item">
+                            <form id="logoutForm" method="POST" action="{{ route('logout') }}">
+                                <button class="dropdown-item" type="submit"><i class="fas fa-sign-out-alt"></i> &nbsp; Cerrar
+                                    sesión</button>
+                                @csrf
+                            </form>
+                        </a>
+                    </div>
+                </li>
             @else
                 <a href="" class="btn-main"><strong>Registrarse</strong></a>
                 <a href="{{route('login')}}" class="btn-main"><strong>Iniciar sesión</strong></a>

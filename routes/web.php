@@ -16,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+//Route::get('/login', [UserController::class, 'Login'])->name('login');
+Route::get('/registro', [UserController::class, 'Registro'])->name('usuario.registro');
+
+Route::group(['middleware' => ['auth']], function(){
+
+});
+
 Route::get('/', [HomeController::class, 'LandingPage'])->name('home');
 Route::post('/', [HomeController::class, 'LandingPage'])->name('home');
-
-Route::get('/login', [UserController::class, 'Login'])->name('login');
-Route::get('/registro', [UserController::class, 'Registro'])->name('usuario.registro');
 
 Route::get('/carrito', [ShoppingController::class, 'index'])->name('shopping-car');
 Route::get('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
