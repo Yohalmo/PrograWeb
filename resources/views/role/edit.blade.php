@@ -10,7 +10,7 @@
     @slot('backLink',route('user.index'))
 
     @slot('cardBody')
-    <form method="post" class=" m-4 p-4" action="{{ route('role.update' , $row->id) }}">
+    <form method="post" class=" m-4 p-4" id="FrmRole" action="{{ route('role.update' , $row->id) }}">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
         <div class="row">
@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label for="name">Nombre</label>
 
-                    <input type="text" name="name" class="form-control" value="{{ $row->name }}" @if($row->name === ') readonly="readonly" @endif>
+                    <input type="text" name="name" class="form-control" value="{{ $row->name }}" >
                 </div>
             </div>
             <div class="col-12 col-md-8">
@@ -49,21 +49,18 @@
             </div>
         </div>
 
-        <hr>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="float-right">
-                    <a href="{{ route('role.index') }}" class="btn grisUno">
-                        <i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;Cancelar
-                    </a>
-                    <button type="submit" class="ml-2 btn btn-colorGB">
-                        <i class="fas fa-save"></i>&nbsp;&nbsp;&nbsp;Guardar
-                    </button>
-                </div>
-            </div>
-        </div>
     </form>
+    @endslot
+    @slot('cardFooter')
+
+    <div class="text-end">
+        <a href="{{ route('role.index') }}" class="btn btn-danger">
+            <i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;Cancelar
+        </a>
+        <button type="submit" class="ml-2 btn btn-success" form="FrmRole">
+            <i class="fas fa-save"></i>&nbsp;&nbsp;&nbsp;Guardar
+        </button>
+    </div>
     @endslot
 </x-card-info>
 @endsection

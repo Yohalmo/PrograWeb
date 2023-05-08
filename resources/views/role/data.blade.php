@@ -3,9 +3,6 @@
         <td>{{ $row->name }}</td>
         <td>{{ $row->description }}</td>
         <td>
-            @can('role-show')
-                <a href="{{ route('role.show' , [$row->id]) }}" class="btn btn-datatable btn-icon me-2" title="Ver"><i class="fas fa-eye"></i></a>
-            @endcan
 
             @can('role-edit')
                 <a href="{{ route('role.edit' , [$row->id]) }}" class="btn btn-datatable btn-icon me-2" title="Editar"><i class="fas fa-edit"></i></a>

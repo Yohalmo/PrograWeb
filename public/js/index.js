@@ -95,17 +95,26 @@ $('body').on('keyup', '.InputNumber', function(){
 
     $(this).val(out);
 });
+$('body').on('change', '.previsualizar-imagen', function(){
 
-function readURL(input, Name, inputId) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+    // Obtener la imagen seleccionada por el usuario
+    const inputImagen = document.getElementById($(this).attr('id'));
+    const contenedorImagen = document.getElementById($(this).attr('img-view'));
+    const imagen = inputImagen.files[0];
 
-        reader.onload = function (e) {
-            $(Name).html($(inputId).val());
-        };
-        reader.readAsDataURL(input.files[0]);
+    while (contenedorImagen.firstChild) {
+        contenedorImagen.removeChild(contenedorImagen.firstChild);
     }
-}
+
+    // Crear un objeto URL para la imagen y asignarlo como fuente del elemento de imagen
+    const urlImagen = URL.createObjectURL(imagen);
+    const img = document.createElement('img');
+    img.src = urlImagen;
+
+    // Añadir la imagen al contenedor de previsualización
+    contenedorImagen.appendChild(img);
+    URL.revokeObjectURL();
+});
 
 function AlertConfirmacion(TextAlert){
     return new Promise((resolve, reject) => {

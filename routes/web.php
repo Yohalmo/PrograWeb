@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermisssionController;
 use App\Http\Controllers\RoleController;
@@ -29,6 +30,13 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/buscar-privilegios', [PermisssionController::class, 'Buscar'])->name('buscar-privilegios');
         Route::post('/modal-info-permiso', [PermisssionController::class, 'ShowModal'])->name('permission-modal');
         Route::post('/save-permissions', [PermisssionController::class, 'SaveInfo'])->name('save-permission');
+    });
+
+    Route::prefix('categorias')/* ->middleware('can:ver-categorias') */->group(function () {
+        Route::get('/', [CategoriaController::class, 'index'])->name('categorias.index');
+        Route::get('/buscar-categorias', [CategoriaController::class, 'Buscar'])->name('buscar-categorias');
+        Route::post('/modal-info-categoria', [CategoriaController::class, 'ShowModal'])->name('category-modal');
+        Route::post('/save-category', [CategoriaController::class, 'SaveInfo'])->name('save-category');
     });
 
     Route::prefix('usuarios')/* ->middleware('can:ver-usuarios') */->group(function () {

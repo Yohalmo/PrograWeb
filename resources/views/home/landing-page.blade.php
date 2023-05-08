@@ -48,7 +48,7 @@
 
                 <div class="card card-category">
                     <div class="row no-gutters">
-                        <div class="col-md-4"><img class="img-fluid img-category" src="{{ asset($item->ImagenCategoria)}}" alt="..."></div>
+                        <div class="col-md-4"><img class="img-fluid img-category" src="{{ url($item->ImagenCategoria) }}" alt="{{$item->NombreCategoria}}"></div>
                         <div class="col-md-8">
                             <div class="card-body card-body-container">
                                 <h5 class="card-title text-black"><strong>{{$item->NombreCategoria}}</strong></h5>
