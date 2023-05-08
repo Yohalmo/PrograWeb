@@ -1,8 +1,8 @@
-@extends('templates.MainTemplate', ['noNavbar' => 'inicio-page'])
+@extends('templates.MainTemplate', ['noNavbar' => 'inicio-page', 'classContent' => ''])
 
 @section('body')
 
-<div>
+<div class="carrucel-container">
     <img src="{{asset('images/banner.jpg')}}" alt="" class="carrucel">
 </div>
 
@@ -42,22 +42,29 @@
 
     <div class="row mb-5">
         @foreach ($categorias as $item)
+
+
             <div class="col-xl-4 col-md-6 col-sm-12 mb-3">
-                <div class="card">
+
+                <div class="card card-category">
                     <div class="row no-gutters">
-                        <div class="col-md-4"><img class="img-fluid" src="{{ asset($item->ImagenCategoria)}}" alt="..."></div>
+                        <div class="col-md-4"><img class="img-fluid img-category" src="{{ asset($item->ImagenCategoria)}}" alt="..."></div>
                         <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$item->NombreCategoria}}</h5>
-                                <div>
+                            <div class="card-body card-body-container">
+                                <h5 class="card-title text-black"><strong>{{$item->NombreCategoria}}</strong></h5>
+                                <p>
                                     50 productos
-                                    <button class="bg-black text-white mt-auto ms-auto"><i class="fas fa-arrow-right"></i></button>
-                                </div>
+                                </p>
+                                <button class="bg-black text-white mt-auto ms-auto
+                                 button-container text-center pe-3 ps-3">
+                                    <i class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         @endforeach
 
         <div class="col-12 text-end">

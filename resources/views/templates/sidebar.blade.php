@@ -28,7 +28,7 @@
                         <a class="nav-link text-white " id="home-page" href="">Productos</a>
                         <a class="nav-link text-white " href="">Categorias</a>
                         <a class="nav-link text-white" id="tramites" href="">Ordenes</a>
-                        <a class="nav-link text-white" id="pfrecuentes" href="">Usuarios</a>
+                        <a class="nav-link text-white" id="pfrecuentes" href="{{ route('user.index') }}">Usuarios</a>
                     </nav>
                 </div>
             </div>

@@ -1,7 +1,4 @@
 @extends('templates.MainTemplate')
-@section('pretittle', 'Vista general')
-@section('tittle', 'Roles')
-
 
 @section('body')
 
@@ -18,12 +15,10 @@
 
 
         @slot('accionBuscar')
-            onkeyup="if(event.keyCode == 13) MakeRequestData('{{route('admin.buscar-roles')}}' + '/' + $(this).val() , '#tablePermisos', true)"
+            onkeyup="if(event.keyCode == 13) MakeRequestData('{{route('buscar-roles')}}' + '/' + $(this).val() , '#tablePermisos', true)"
         @endslot
 
-        @can('admin-role-create')
-            @slot('linkAdicionales',route('admin.role.create'))
-        @endcan
+        @slot('linkAdicionales',route('role.create'))
 
 
         @slot('header')
@@ -33,9 +28,9 @@
         @endslot
 
         @slot('body')
-            @include('main.role.data')
+            @include('role.data')
         @endslot
 
     </x-table>
-    {{ $rows->render() }}
+    {{ $roles->render() }}
 @endsection

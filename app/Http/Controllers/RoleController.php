@@ -10,13 +10,13 @@ class RoleController extends Controller
 {
     public function index()
     {
-        $roles = Role::orderby('name')->paginate(20)->withPath(route('admin.buscar-roles'));
+        $roles = Role::orderby('name')->paginate(20)->withPath(route('buscar-roles'));
         return view('role.index', compact('roles'));
 
     }
 
     public function Buscar($palabra = ''){
-        $roles = Role::where('name', 'like', "%$palabra%")->paginate(20)->withPath(route('admin.buscar-roles', [$palabra]));
+        $roles = Role::where('name', 'like', "%$palabra%")->paginate(20)->withPath(route('buscar-roles', [$palabra]));
         return view('role.data', compact('roles'));
     }
 

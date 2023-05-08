@@ -7,7 +7,7 @@
 
 @section('body')
 <x-card-info>
-    @slot('backLink',route('admin.role.index'))
+    @slot('backLink',route('role.index'))
 
     @slot('cardBody')
     <div class="row">

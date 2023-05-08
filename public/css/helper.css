@@ -39,6 +39,7 @@ select {
 
 .main-color{
     background-color: #8D525A !important;
+    color: white !important;
 }
 
 .error-seccion{
@@ -115,7 +116,14 @@ select {
 .carrucel{
     height: 55vh;
     object-fit: cover;
-    width: 100vw;
+    width: 100%;
+    border-radius: 0 0 25px 25px;
+}
+
+.carrucel-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .div-carrucel{
@@ -147,4 +155,30 @@ select {
 
 .inicio-page{
     top: 0 !important
+}
+
+.card-category{
+    border-radius: 25px !important;
+}
+
+.card-category{
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.button-container {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    border-radius: 0px 0px 15px 0px;
+}
+
+.img-category{
+    border-radius: 15px 0 0 15px ;
+    height: 100% !important;
+    width: 100%;
+}
+
+.card-body-container{
+    position: relative !important;
 }

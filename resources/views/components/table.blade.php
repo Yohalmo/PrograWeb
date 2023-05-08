@@ -19,11 +19,11 @@
                     @endif
 
                     @if (isset($btnAdicionales))
-                        <button class="btn color-main" onclick="{{$btnAdicionales}}" title="Nuevo" id="Nuevo">
+                        <button class="btn main-color" onclick="{{$btnAdicionales}}" title="Nuevo" id="Nuevo">
                             <i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Nuevo
                         </button>
                     @elseif(isset($linkAdicionales))
-                        <a class="btn btn-colorGB" href="{{$linkAdicionales}}" title="Nuevo" id="Nuevo">
+                        <a class="btn main-color" href="{{$linkAdicionales}}" title="Nuevo" id="Nuevo">
                             <i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Nuevo
                         </a>
                     @endif

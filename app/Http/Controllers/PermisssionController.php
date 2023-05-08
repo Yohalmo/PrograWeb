@@ -52,6 +52,6 @@ class PermisssionController extends Controller
         $Info->description = $request->descripcion;
         $Info->save();
 
-        return view('permission.data', ['rows' => [$Info]]);
+        return view('permission.data', ['permissions' => [$Info]]);
     }
 }

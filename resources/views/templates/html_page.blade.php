@@ -16,11 +16,8 @@
 
         @yield('headerData')
 
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}?hjgvbhj=vbhj">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-select.min.css')}}?hjgvbhj=vbhj">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}?hjgvbhj=vbhj">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}?hyjgvbhj=vbhj">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}?hjgvbhj=vbhj" >
+        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" >
 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
@@ -29,6 +26,8 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
             crossorigin="anonymous"></script>
+
+    <script src="{{asset('js/jquery.min.js')}}"></script>
 
     @yield('scriptsHeader')
     </header>
@@ -55,11 +54,11 @@
         @yield('Data')
 
 
-        <div aria-hidden="true" tabindex="-1" role="dialog" class="modal modal-blur fade p-0" id="BigModalInfo" name="BigModalInfo"
+        <div aria-hidden="true" tabindex="-1" role="dialog" class="modal modal-blur fade p-0" id="modal-principal" name="modal-principal"
             data-bs-backdrop='static'>
             <div class="modal-dialog modal-lg p-2">
                 <!-- CONTENIDO DEL MODAL -->
-                <div class="modal-content" id="CuerpoBigModal">
+                <div class="modal-content" id="principal-modal-content">
                 </div>
             </div>
         </div>
@@ -74,9 +73,9 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset("js/bootstrap-select.js") }}" type="text/javascript"></script>
-    <script src="{{asset('js/admin.min.js')}}"></script>
+    <script src="{{asset('js/min.js')}}"></script>
     <script src="{{asset('js/jquery.mask.js')}}"></script>
-    <script src="{{asset('js/index.js')}}?gbyu=vgbhj"></script>
+    <script src="{{asset('js/index.js')}}"></script>
 
     <script>
         let navegador = navigator.userAgent;

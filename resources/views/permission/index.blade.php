@@ -1,9 +1,4 @@
 @extends('templates.MainTemplate')
-@section('pretittle', 'Vista general')
-@section('tittle', 'Permisos')
-@section("scripts")
-
-@endsection
 
 @section('body')
 
@@ -21,9 +16,11 @@
         onkeyup="if(event.keyCode == 13) MakeRequestData('{{route('buscar-privilegios')}}' + '?busqueda=' + $(this).val() , '#tablePermisos', true)"
     @endslot
 
-    @slot('btnAdicionales')
-        MakeRequestData( '{{ route('permission-modal') }}', '.modal-content', true, '#modal-principal', 'POST', 2, '', false, false,
-        ['Id/0', 'Accion/@if(count($permissions) == 0) 2 @else 4 @endif','Contenedor/tablePermisos'])
+    @slot('btnsAdicionales')
+        <button class="btn main-color text-white" onclick="MakeRequestData( '{{ route('permission-modal') }}', '#principal-modal-content', true, '#modal-principal', 'POST', 2, '', false, false,
+        ['Id/0', 'Accion/4','Contenedor/tablePermisos'])" title="Nuevo" id="Nuevo">
+            <i class="fas fa-plus"></i>&nbsp;&nbsp;&nbsp;Nuevo
+        </button>
     @endslot
 
 

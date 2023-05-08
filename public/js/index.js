@@ -308,13 +308,15 @@ function ErrorRequest(response){
 function LoadingAlert(){
     Swal.fire({
         type: 'info',
-        html: '<div class="col-12 loading-gif" role="status"></div>',
+        html: '<div class="spinner-grow text-white me-2" role="status"><span class="visually-hidden"></span></div>'
+        + '<div class="spinner-grow text-white me-2" role="status"><span class="visually-hidden"></span></div>'
+        + '<div class="spinner-grow text-white" role="status"><span class="visually-hidden"></span></div>',
         allowOutsideClick: false,
         showConfirmButton: false,
-        width: 160,
+        width: 170,
         padding: '0'
     });
-    $(".swal2-modal").css('background-color', '#303745');
+    $(".swal2-modal").addClass('main-color');
 }
 
 function ShowAlert(Titulo, Mensaje, Icono, toastView = true){

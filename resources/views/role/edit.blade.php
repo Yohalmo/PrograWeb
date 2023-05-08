@@ -7,10 +7,10 @@
 
 @section('body')
 <x-card-info>
-    @slot('backLink',route('admin.user.index'))
+    @slot('backLink',route('user.index'))
 
     @slot('cardBody')
-    <form method="post" class=" m-4 p-4" action="{{ route('admin.role.update' , $row->id) }}">
+    <form method="post" class=" m-4 p-4" action="{{ route('role.update' , $row->id) }}">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
         <div class="row">
@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label for="name">Nombre</label>
 
-                    <input type="text" name="name" class="form-control" value="{{ $row->name }}" @if($row->name === 'admin') readonly="readonly" @endif>
+                    <input type="text" name="name" class="form-control" value="{{ $row->name }}" @if($row->name === ') readonly="readonly" @endif>
                 </div>
             </div>
             <div class="col-12 col-md-8">
@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="float-right">
-                    <a href="{{ route('admin.role.index') }}" class="btn grisUno">
+                    <a href="{{ route('role.index') }}" class="btn grisUno">
                         <i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;Cancelar
                     </a>
                     <button type="submit" class="ml-2 btn btn-colorGB">

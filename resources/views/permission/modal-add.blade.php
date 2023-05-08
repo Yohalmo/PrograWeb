@@ -34,11 +34,11 @@
     @endslot
 
     @slot('footer')
-        <button type="button" class="btn grisUno" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
             <i class="fas fa-times"></i> &nbsp;
             Cancelar</button>
 
-        <button type="button" class="btn btn-colorGB" onclick="MakeRequestData( '{{ route('admin.save-permission') }}',
+        <button type="button" class="btn btn-success" onclick="MakeRequestData( '{{ route('save-permission') }}',
          '#{{$request->Contenedor}}', true, '#modal-principal', 'POST', {{$request->Accion}}, '#FrmPregunta', false, true)">
             <i class="fas fa-save"></i>&nbsp;&nbsp;&nbsp;Guardar
         </button>

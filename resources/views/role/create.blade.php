@@ -7,10 +7,10 @@
 
 @section('body')
 <x-card-info>
-    @slot('backLink',route('admin.user.index'))
+    @slot('backLink','')
 
     @slot('cardBody')
-    <form method="POST" action="{{ route('admin.role.store') }}">
+    <form method="POST" action="{{ route('role.store') }}" id="form-role">
         @csrf
         <div class="row">
             <div class="col-12 col-md-4">
@@ -47,20 +47,18 @@
                 @endforeach
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="float-right">
-                    <a href="{{ route('admin.role.index') }}" class="btn grisUno">
-                        <i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;Cancelar
-                    </a>
-                    <button type="submit" class="ml-2 btn btn-colorGB">
-                        <i class="fas fa-save"></i>&nbsp;&nbsp;&nbsp;Guardar
-                    </button>
-                </div>
-            </div>
-        </div>
     </form>
+    @endslot
+
+    @slot('cardFooter')
+        <div class="text-end">
+            <a href="{{ route('role.index') }}" class="btn btn-danger">
+                <i class="fas fa-times"></i>&nbsp;&nbsp;&nbsp;Cancelar
+            </a>
+            <button type="submit" class="ml-2 btn btn-success" form="form-role">
+                <i class="fas fa-save"></i>&nbsp;&nbsp;&nbsp;Guardar
+            </button>
+        </div>
     @endslot
 </x-card-info>
 @endsection
