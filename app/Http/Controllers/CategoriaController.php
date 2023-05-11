@@ -31,9 +31,7 @@ class CategoriaController extends Controller
 
         if(isset($request->imagen)){
             if(isset($categoria->ImagenCategoria)){
-                Log::info("public/storage/$categoria->ImagenCategoria");
                 Storage::delete(str_replace('storage', 'public', $categoria->ImagenCategoria));
-                //Storage::delete("public/storage/app/$categoria->ImagenCategoria");
             }
 
             $categoria->ImagenCategoria = SubirImagen($request->imagen, 'categorias');

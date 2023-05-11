@@ -25,7 +25,7 @@
 
                 <div class="collapse show" id="PrimerMenu" data-bs-parent="#accordionSidenav">
                     <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                        <a class="nav-link text-white " id="home-page" href="">Productos</a>
+                        <a class="nav-link text-white " id="home-page" href="{{route('productos.listado')}}">Productos</a>
                         <a class="nav-link text-white " href="{{ route('categorias.index') }}">Categorias</a>
                         <a class="nav-link text-white" id="tramites" href="">Ordenes</a>
                         <a class="nav-link text-white" id="pfrecuentes" href="{{ route('user.index') }}">Usuarios</a>

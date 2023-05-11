@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermisssionController;
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UserController;
@@ -37,6 +38,16 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/buscar-categorias', [CategoriaController::class, 'Buscar'])->name('buscar-categorias');
         Route::post('/modal-info-categoria', [CategoriaController::class, 'ShowModal'])->name('category-modal');
         Route::post('/save-category', [CategoriaController::class, 'SaveInfo'])->name('save-category');
+    });
+
+    Route::prefix('productos')/* ->middleware('can:ver-productos') */->group(function () {
+        Route::get('/', [ProductsController::class, 'ListaProductos'])->name('productos.listado');
+        Route::get('/buscar-productos', [ProductsController::class, 'Buscar'])->name('buscar-productos');
+        Route::post('/modal-info-product', [ProductsController::class, 'ShowModal'])->name('product-modal');
+        Route::post('/save-product', [ProductsController::class, 'SaveProduct'])->name('save-product');
+        Route::post('/cambiar-estado', [ProductsController::class, 'ChangeStatus'])->name('cambiar-estado-producto');
+        Route::post('/modal-asignacion', [ProductsController::class, 'CategoriasAsignadas'])->name('modal-asignacion');
+        Route::post('/asignar-categoria', [ProductsController::class, 'AsignarCategoria'])->name('asignar-categoria');
     });
 
     Route::prefix('usuarios')/* ->middleware('can:ver-usuarios') */->group(function () {

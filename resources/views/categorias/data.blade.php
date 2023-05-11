@@ -6,10 +6,10 @@
                 alt="{{ $row->NombreCategoria }}" width="200">
         </td>
         <td class="align-middle text-center"> {{ $row->NombreCategoria }}</td>
-        <td>
-            <button onclick="MakeRequestData( '{{ route('category-modal') }}', '.modal-content', true,
+        <td class="align-middle text-center">
+            <button onclick="MakeRequestData( '{{ route('product-modal') }}', '.modal-content', true,
             '#modal-principal', 'POST', 2, '', false, false, ['Id/{{$row->IdCategoria}}', 'Accion/3','Contenedor/categoria-{{$row->IdCategoria}}'])"
-            class="btn btn-datatable btn-icon me-2" title="Editar"><i class="fas fa-edit"></i></button>
+            class="btn btn-warning p-2 me-2" title="Editar"><i class="fas fa-edit"></i></button>
         </td>
     </tr>
 @endforeach

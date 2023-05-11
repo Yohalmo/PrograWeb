@@ -15,17 +15,17 @@
 
                 <div class="col-lg-12">
                     <div class="mb-3">
-                        <label class="form-label">Imagen</label>
+                        <label class="form-label text-black">Imagen</label>
                         <input name="imagen" id="imagen" type="file" required class="form-control previsualizar-imagen"
                         img-view="img-category"/>
                     </div>
                 </div>
 
-                <div id="img-category" class="div-previsualizar"></div>
+                <div id="img-category" class="div-previsualizar mb-3"></div>
 
                 <div class="col-lg-12">
                     <div class="mb-3">
-                        <label class="form-label">Nombre</label>
+                        <label class="form-label text-black">Nombre</label>
                         <input name="nombre" id="nombre" required class="form-control" value="{{$Info->NombreCategoria}}"/>
                     </div>
                 </div>
@@ -47,15 +47,3 @@
     @endslot
 
 </x-card-modal>
-
-
-<script>
-    $("#nombre").keyup(function(){
-        var ta      =   $("#nombre");
-        letras      =   ta.val().replace(/ /g, "-");
-        ta.val(letras)
-    });
-</script>
-
-
-

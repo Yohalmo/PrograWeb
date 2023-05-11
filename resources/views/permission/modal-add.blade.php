@@ -15,7 +15,7 @@
 
                 <div class="col-lg-12">
                     <div class="mb-3">
-                        <label class="form-label">Nombre</label>
+                        <label class="form-label text-black">Nombre</label>
                         <input name="nombre" id="nombre" required class="form-control" value="{{$Info->name}}"/>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
 
                 <div class="col-lg-12">
                     <div class="mb-3">
-                        <label class="form-label">Descripción</label>
+                        <label class="form-label text-black">Descripción</label>
                         <textarea name="descripcion" id="descripcion" class="form-control" rows="3" required>{{$Info->description}}</textarea>
                     </div>
                 </div>
