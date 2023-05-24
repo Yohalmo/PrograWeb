@@ -7898,7 +7898,7 @@ textarea.form-control-lg {
 }
 
 .toast {
-  width: 350px;
+  width: 100%;
   max-width: 100%;
   font-size: 0.875rem;
   pointer-events: auto;
@@ -19629,9 +19629,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  /* background: #000; */
   z-index: 1037;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   transition: opacity 0.3s ease-in-out;
 }
 

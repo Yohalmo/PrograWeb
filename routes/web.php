@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PermisssionController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RoleController;
@@ -26,6 +27,11 @@ Route::get('/registro', [UserController::class, 'Registro'])->name('usuario.regi
 Route::group(['middleware' => ['auth']], function(){
 
 
+    Route::prefix('ordenes')/* ->middleware('can:ver-permisos') */->group(function () {
+        Route::get('/', [PermisssionController::class, 'index'])->name('permissions.index');
+        Route::get('/enviar-solicitud', [ShoppingController::class, 'Envio'])->name('enviar-solicitud');
+    });
+
     Route::prefix('permisos')/* ->middleware('can:ver-permisos') */->group(function () {
         Route::get('/', [PermisssionController::class, 'index'])->name('permissions.index');
         Route::get('/buscar-privilegios', [PermisssionController::class, 'Buscar'])->name('buscar-privilegios');
@@ -38,6 +44,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get('/buscar-categorias', [CategoriaController::class, 'Buscar'])->name('buscar-categorias');
         Route::post('/modal-info-categoria', [CategoriaController::class, 'ShowModal'])->name('category-modal');
         Route::post('/save-category', [CategoriaController::class, 'SaveInfo'])->name('save-category');
+        Route::post('/cambiar-estado', [CategoriaController::class, 'ChangeStatus'])->name('cambiar-estado-categoria');
     });
 
     Route::prefix('productos')/* ->middleware('can:ver-productos') */->group(function () {

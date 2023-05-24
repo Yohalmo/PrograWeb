@@ -1,5 +1,5 @@
 <footer class="sticky-footer main-color">
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center  p-auto align-items-center">
         <div class="col-xl-2 col-md-4 col-sm-12 p-2">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="m-auto p-auto">

@@ -23,7 +23,7 @@
                 <div id="img-product" class="div-previsualizar mb-3">
                     @if (isset($Info->ProductoImagen))
                         <img class="img-fluid" src="{{ url($Info->ProductoImagen) }}"
-                        alt="{{ $Info->ProductoNombre }}" width="100%">
+                        alt="{{ $Info->ProductoNombre }}">
                     @endif
                 </div>
 

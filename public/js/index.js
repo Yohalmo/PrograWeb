@@ -1,40 +1,4 @@
 var token = $('meta[name=_token]').attr('content');
-var urlBack = '';
-var Invalidclases = 'was-validated form-control:invalid was-validated is-invalid is-invalid';
-var chatId = 0;
-
-$('body').on('keyup', '.pass-word', function(){
-    var response = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.,])([A-Za-z\d$@$!%*?&.,]|[^ ]){8,100}$/).test($(this).val());
-
-    if(response){
-        $('#error-pass').addClass('d-none');
-        $(this).removeClass(Invalidclases);
-    }else{
-        $('#error-pass').removeClass('d-none');
-        $(this).addClass(Invalidclases);
-    }
-});
-
-$('body').on('keyup', '.celular', function(){
-    if($(this).val()[0] != '6' && $(this).val()[0] != '7'){
-        $('#lblcelular').removeClass('d-none');
-        $(this).addClass(Invalidclases);
-    }else{
-        $('#lblcelular').addClass('d-none');
-        $(this).removeClass(Invalidclases);
-    }
-});
-
-$('body').on('keyup', '.telefono', function(){
-    if($(this).val() != '' && $(this).val()[0] != '7' && $(this).val()[0] != '2' && $(this).val()[0] != '6'){
-        $('#lbltelefono').removeClass('d-none');
-        $(this).addClass(Invalidclases);
-    }else{
-        $('#lbltelefono').addClass('d-none');
-        $(this).removeClass(Invalidclases);
-    }
-});
-
 
 function Buscador(ruta, itemReplace, item, keyCode){
     if(keyCode != 13) return;
@@ -62,39 +26,6 @@ $("body").on("click", ".page-link", function(event){
     }
 });
 
-
-function Imprimir()  {
-    window.print();
-}
-
-$('body').on('keyup', '.InputNumber', function(){
-
-    var out = '';
-    var filtro = '1234567890.,';
-    let decimalItem = false;
-    let totaldecimales = 0;
-
-    for (var i=0; i<this.value.length; i++){
-        if (filtro.indexOf(this.value.charAt(i)) != -1){
-
-            if(totaldecimales == 2){
-                break;
-            }
-
-            if(decimalItem){
-                totaldecimales++;
-            }
-
-            if(this.value.charAt(i) == '.' || this.value.charAt(i) == ','){
-                decimalItem = true;
-            }
-
-            out += this.value.charAt(i);
-        }
-    }
-
-    $(this).val(out);
-});
 $('body').on('change', '.previsualizar-imagen', function(){
 
     // Obtener la imagen seleccionada por el usuario
@@ -171,7 +102,6 @@ function ValidarForm(form, ShowInputs = true){
 function CamposRequeridos(form){
 
     let vacias = false;
-    let id = '';
     let Preguntas = '';
 
     $(form).each(function () {

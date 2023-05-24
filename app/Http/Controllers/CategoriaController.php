@@ -42,4 +42,12 @@ class CategoriaController extends Controller
 
         return view('categorias.data', ['categorias' => [$categoria]]);
     }
+
+    public function ChangeStatus(Request $request){
+        $categoria = Categoria::find($request->categoria);
+        $categoria->EstadoCategoria = ($categoria->EstadoCategoria ? 0 : 1);
+        $categoria->save();
+
+        return view('categorias.data', ['categorias' => [$categoria]]);
+    }
 }

@@ -18,6 +18,16 @@ class ShoppingController extends Controller
         return view('shopping.index', compact('productos', 'ListaProductos'));
     }
 
+    public function Envio(){
+        $productos = Session::get('shooping-card', []);
+
+        if(count($productos) == 0){
+            return redirect(route('home'));
+        }
+
+        return view('shopping.solicitud');
+    }
+
     public function AddProductModal(Request $request){
         $Producto = Producto::find($request->producto);
         return view('shopping.agregar', compact('Producto'));

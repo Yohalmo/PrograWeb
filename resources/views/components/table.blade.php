@@ -38,23 +38,24 @@
                     </div>
                 @endisset
             </div>
-            <div class="dataTable-container table-responsive {{$DivTableClass ?? ''}}"  style="{{$DivTableStyle ?? ''}}">
-                @csrf
-                <table id="datatablesSimple" class="table table-bordered ">
-                    <thead>
-                        <tr>
-                            {{$header}}
-                        </tr>
-                    </thead>
+            @if (isset($header))
+                <div class="dataTable-container table-responsive {{$DivTableClass ?? ''}}"  style="{{$DivTableStyle ?? ''}}">
+                    @csrf
+                    <table id="datatablesSimple" class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                {{$header}}
+                            </tr>
+                        </thead>
 
-                    <tbody id="{{ $idTabla ?? 'TableBody'}}" class="contentPager"
-                     link="#{{ $idTabla ?? 'TableBody'}}">
-                        {{$body}}
-                    </tbody>
-                </table>
-            </div>
-            @if (isset($paginador))
-                {{$paginador}}
+                        <tbody id="{{ $idTabla ?? 'TableBody'}}" class="contentPager"
+                        link="#{{ $idTabla ?? 'TableBody'}}">
+                            {{$body}}
+                        </tbody>
+                    </table>
+                </div>
+            @else
+                {{ $contentTable ?? '' }}
             @endif
         </div>
     </div>

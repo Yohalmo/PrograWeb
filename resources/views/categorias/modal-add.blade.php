@@ -21,7 +21,12 @@
                     </div>
                 </div>
 
-                <div id="img-category" class="div-previsualizar mb-3"></div>
+                <div id="img-category" class="d-flex justify-content-center div-previsualizar mb-3">
+                    @if (isset($Info->ImagenCategoria))
+                        <img class="img-fluid" src="{{ url($Info->ImagenCategoria) }}"
+                        alt="{{ $Info->NombreCategoria }}">
+                    @endif
+                </div>
 
                 <div class="col-lg-12">
                     <div class="mb-3">

@@ -7,7 +7,7 @@
 
 @section('body')
 
-<label hidden class="d-none" id="alertUser">¿Esta seguro que quiere habilitar / desahibilitar esta categoria?</label>
+<label hidden class="d-none" id="AlertUser">¿Esta seguro que quiere cambiar el estado de esta categoria?</label>
 
 <x-table>
     @slot('idTabla')
@@ -29,15 +29,10 @@
         onkeyup="if(event.keyCode == 13) MakeRequestData('{{route('buscar-categorias')}}' + '/' + $(this).val() , '#tablePermisos', true)"
     @endslot
 
-    @slot('header')
-        <th>Categoria</th>
-        <th>Imagen</th>
-        <th>Nombre</th>
-        <th style="width: 150px">Acciones</th>
-    @endslot
-
-    @slot('body')
-        @include('categorias.data')
+    @slot('contentTable')
+        <div class="row">
+            @include('categorias.data')
+        </div>
     @endslot
 
 </x-table>

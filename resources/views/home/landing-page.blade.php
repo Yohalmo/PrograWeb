@@ -2,8 +2,20 @@
 
 @section('body')
 
+
 <div class="carrucel-container">
+
     <img src="{{asset('images/banner.jpg')}}" alt="" class="carrucel">
+    <img src="{{asset('images/comedor.jpg')}}" alt="" class="carrucel d-none">
+    <img src="{{asset('images/sofas.jpg')}}" alt="" class="carrucel d-none">
+
+    <div class="indicator-container d-flex justify-content-center">
+        <div class="carrucel-indicators text-center">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
 </div>
 
 <div class="col-xl-9 col-md-10 col-sm-11 m-auto mt-5">
@@ -56,7 +68,7 @@
                                     50 productos
                                 </p>
                                 <button class="bg-black text-white mt-auto ms-auto
-                                 button-container text-center pe-3 ps-3">
+                                            button-container text-center pe-3 ps-3">
                                     <i class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>
@@ -73,4 +85,9 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+    <link rel="stylesheet" href="{{asset('css/landing-page.css')}}">
+    <script src="{{asset('js/landing-page.js')}}"></script>
 @endsection
