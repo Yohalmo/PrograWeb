@@ -16,18 +16,23 @@
 
         @yield('headerData')
 
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-select.min.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}"><link rel="stylesheet" type="text/css" href="{{asset('css/form.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}?hjgvbhj=vbhj">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap-select.min.css')}}?hjgvbhj=vbhj">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}?hjgvbhj=vbhj">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}?hyjgvbhj=vbhj">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}?hjgvbhj=vbhj" >
 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        crossorigin="anonymous"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            crossorigin="anonymous"></script>
 
     @yield('scriptsHeader')
     </header>
-    <body class="nav-fixed p-0 {{ $StylesBody ?? '' }} {{  isMobileDevice() ? '' : 'sidebar-toggled sidenav-toggled' }}">
+    <body class="nav-fixed p-0 {{ $StylesBody ?? 'bg-white' }} {{  isMobileDevice() ? '' : 'sidebar-toggled sidenav-toggled' }}">
 
         @if (session('info'))
             <div class="alert alert-warning">
@@ -60,7 +65,6 @@
         </div>
     </body>
 
-    <script src="{{ asset("js/form.js") }}" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
 
@@ -72,7 +76,7 @@
     <script src="{{ asset("js/bootstrap-select.js") }}" type="text/javascript"></script>
     <script src="{{asset('js/admin.min.js')}}"></script>
     <script src="{{asset('js/jquery.mask.js')}}"></script>
-    <script src="{{asset('js/index.js')}}"></script>
+    <script src="{{asset('js/index.js')}}?gbyu=vgbhj"></script>
 
     <script>
         let navegador = navigator.userAgent;

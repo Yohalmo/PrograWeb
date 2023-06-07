@@ -38,7 +38,7 @@ select {
 }
 
 .main-color{
-    background-color: #8D525A;
+    background-color: #8D525A !important;
 }
 
 .error-seccion{
@@ -60,4 +60,91 @@ select {
 
 .ancho-total{
     width: 100%;
+}
+
+
+.logo-footer{
+    height: 100px;
+    width: 100px;
+}
+
+
+.btn-main{
+    background-color: #8A2723 !important;
+    color: white !important;
+    border: none;
+    border-radius: 20px !important;
+    height: 30px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#card-nosotros{
+    background-color: #F1FAFD;
+    border-radius: 12px;
+}
+
+.div-nosotros{
+    margin: 45px 27px;
+    color: black;
+}
+
+.card-producto{
+    border-radius: 17px !important;
+}
+
+.text-color-main{
+    color: #8A2723 !important;
+}
+
+.descripcion-producto{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 15px;
+    color: black;
+    font-size: 14px;
+}
+
+.img-card-producto{
+    object-fit: cover;
+}
+
+.carrucel{
+    height: 55vh;
+    object-fit: cover;
+    width: 100vw;
+}
+
+.div-carrucel{
+    padding: 0 0 20px 20px;
+}
+
+.btn-mas{
+    border: 2px #000 solid;
+    background-color: white;
+    padding: 5px 30px;
+    margin-top: 25px;
+    color: black;
+}
+
+#ancla-home{
+    height: 100px !important;
+    width: 100px !important;
+    background-color: #8A2723 !important;
+}
+
+#icono-ancla{
+    font-size: 60px !important;
+    color: white;
+}
+
+.transparente{
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.inicio-page{
+    top: 0 !important
 }

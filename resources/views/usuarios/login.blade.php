@@ -20,10 +20,11 @@
                                     <div class="text-center d-block">
                                         <h1 id="titulo"><strong>Iniciar Sesión</strong></h1>
                                     </div>
-                                    <form class="user mt-5">
+                                    <form class="user mt-5" action="{{ route('login') }}" method="POST">
+                                        @csrf
                                         <div class="form-group mt-3">
                                             <label for="" class="form-label"><strong>Correo:</strong></label>
-                                            <input type="email" class="input-form" id="email">
+                                            <input type="email" class="input-form" id="email" name="email">
                                         </div>
 
                                         <div class="form-group mt-5">
