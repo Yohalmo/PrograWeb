@@ -45,7 +45,7 @@
         @endforeach
 
         <div class="col-12 text-end">
-            <button class="btn-mas">Ver más...</button>
+            <a class="btn-mas" href="{{route('productos')}}">Ver más...</a>
         </div>
     </div>
 
@@ -65,11 +65,12 @@
                             <div class="card-body card-body-container">
                                 <h5 class="card-title text-black"><strong>{{$item->NombreCategoria}}</strong></h5>
                                 <p>
-                                    50 productos
+                                    {{$item->productos}} productos
                                 </p>
-                                <button class="bg-black text-white mt-auto ms-auto
-                                            button-container text-center pe-3 ps-3">
-                                    <i class="fas fa-arrow-right"></i></button>
+                                <a class="bg-black text-white mt-auto ms-auto
+                                            button-container text-center pe-3 ps-3"
+                                            href="{{route('productos', [$item->IdCategoria])}}">
+                                    <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
         @endforeach
 
         <div class="col-12 text-end">
-            <button class="btn-mas">Ver más...</button>
+            <a class="btn-mas" href="{{route('productos')}}">Ver más...</a>
         </div>
     </div>
 </div>

@@ -49,6 +49,7 @@
 
         @yield('Data')
 
+        <div hidden id="div-scripts"></div>
 
         <div aria-hidden="true" tabindex="-1" role="dialog" class="modal modal-blur fade p-0" id="modal-principal" name="modal-principal"
             data-bs-backdrop='static'>

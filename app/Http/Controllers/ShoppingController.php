@@ -6,20 +6,22 @@ use App\Models\Orden;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class ShoppingController extends Controller
 {
     public function index(){
 
-        $productos = Session::get('shooping-card', []);
+        $productos = Session::get('shooping-car', []);
         $ListaProductos = Producto::whereIn('IdProducto', array_keys($productos))->get();
+        $Total = 0;
 
-        return view('shopping.index', compact('productos', 'ListaProductos'));
+        return view('shopping.index', compact('productos', 'ListaProductos', 'productos', 'Total'));
     }
 
     public function Envio(){
-        $productos = Session::get('shooping-card', []);
+        $productos = Session::get('shooping-car', []);
 
         if(count($productos) == 0){
             return redirect(route('home'));
@@ -30,15 +32,15 @@ class ShoppingController extends Controller
 
     public function AddProductModal(Request $request){
         $Producto = Producto::find($request->producto);
-        return view('shopping.agregar', compact('Producto'));
+        return view('shopping.agregar', compact('Producto', 'request'));
     }
 
     public function AddProductShopping(Request $request){
 
-        $productos = Session::get('shooping-card', []);
+        $productos = Session::get('shooping-car', []);
         $producto = Producto::find($request->producto);
 
-        if(!$producto->ProducctoEstado){
+        if(!$producto->ProductoEstado){
             return response()->json('^El producto seleccionado ya no esta disponible', 500);
         }
 
@@ -48,21 +50,23 @@ class ShoppingController extends Controller
             $productos[$request->producto]['cantidad'] = $request->cantidad;
         }
 
-        Session::put('shooping-card', $producto);
+        Session::put('shooping-car', $productos);
+
+        return view('home.notificacion-item');
     }
 
     public function EditShoppingCar(Request $request){
 
-        $productos = Session::get('shooping-card', []);
+        $productos = Session::get('shooping-car', []);
         $productos[$request->producto]['cantidad'] = $request->cantidad;
-        Session::put('shooping-card', $productos);
+        Session::put('shooping-car', $productos);
 
     }
 
     public function SaveOrder(Request $request){
         return DB::transaction(function () use($request) {
 
-            $productos = Session::get('shooping-card', []);
+            $productos = Session::get('shooping-car', []);
             $ListaProductos = Producto::whereIn('IdProducto', array_keys($productos))->get();
 
             $orden = new Orden();
@@ -85,7 +89,7 @@ class ShoppingController extends Controller
                 'IdOrden' => $orden->IdOrden];
             }
 
-            Session::forget('shooping-card');
+            Session::forget('shooping-car');
             $orden->TotalOrden = $total;
             $orden->save();
 

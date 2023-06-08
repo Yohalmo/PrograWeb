@@ -37,6 +37,10 @@ select {
     overflow-y: scroll;
 }
 
+.scroll-x{
+    overflow-x: scroll;
+}
+
 .main-color{
     background-color: #8D525A !important;
     color: white !important;
@@ -130,6 +134,7 @@ select {
     padding: 5px 30px;
     margin-top: 25px;
     color: black;
+    text-decoration: none !important;
 }
 
 #ancla-home{
@@ -200,3 +205,37 @@ select {
 #map{
     min-height: 70vh;
 }
+
+.category-item{
+    border-radius: 30px !important;
+    background-color: #8A2723 !important;
+    color: white !important;
+    min-width: 130px;
+}
+
+.btn-agregar{
+    border-radius: 8px !important;
+}
+
+.color-secondary{
+    color: #8A2723 !important;
+}
+
+.btn-car{
+    border: 2px #000 solid !important;
+    border-radius: 10px !important;
+    height: 45px;
+    width: 45px;
+    font-size: 22px !important;
+}
+
+.btn-buscador{
+    background: #C77353 !important;
+    font-size: 20px !important;
+}
+
+.lista-horizontal {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+}
+

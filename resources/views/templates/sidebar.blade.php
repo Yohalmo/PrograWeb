@@ -4,9 +4,11 @@
         <div class="sidenav-menu ">
             <div class="nav accordion" id="accordionSidenav" >
                 <div align="center">
-                    <div class="mt-3 ">
-                        <img class="img-fluid"
-                            src="{{asset('images/logo.png')}}" alt="" draggable="false">
+                    <div class="mt-3 m-auto">
+                        <div class="card card-body rounded-circle" style="width: 70%; overflow: hidden">
+                            <img class="img-fluid"
+                                src="{{asset('images/logo.png')}}" alt="" draggable="false">
+                        </div>
                     </div>
                 </div>
 

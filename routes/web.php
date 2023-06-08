@@ -48,7 +48,7 @@ Route::group(['middleware' => ['auth']], function(){
     });
 
     Route::prefix('productos')/* ->middleware('can:ver-productos') */->group(function () {
-        Route::get('/', [ProductsController::class, 'ListaProductos'])->name('productos.listado');
+        Route::get('/listado', [ProductsController::class, 'ListaProductos'])->name('productos.listado');
         Route::get('/buscar-productos', [ProductsController::class, 'Buscar'])->name('buscar-productos');
         Route::post('/modal-info-product', [ProductsController::class, 'ShowModal'])->name('product-modal');
         Route::post('/save-product', [ProductsController::class, 'SaveProduct'])->name('save-product');
@@ -60,7 +60,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::prefix('usuarios')/* ->middleware('can:ver-usuarios') */->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('user.index');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
-        Route::post('update-user-info', [UserController::class, 'SaveUserInfo'])->name('user.update');
         Route::get('buscar-usuarios/{palabra?}', [UserController::class, 'Buscar'])->name('buscar-usuarios');
         Route::post('cambiar-estado-usuario', [UserController::class, 'DesahabilitarUsuario'])->name('user-estado');
     });
@@ -78,6 +77,10 @@ Route::group(['middleware' => ['auth']], function(){
 });
 
 Route::get('/', [HomeController::class, 'LandingPage'])->name('home');
+Route::get('/productos/{categoria?}', [ProductsController::class, 'index'])->name('productos');
+Route::get('/search-products/{categoria?}/{vista?}', [ProductsController::class, 'ProductsCategory'])->name('search-products');
 
 Route::get('/carrito', [ShoppingController::class, 'index'])->name('shopping-car');
-Route::get('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
+Route::post('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
+Route::post('/add-shopping-car', [ShoppingController::class, 'AddProductShopping'])->name('add-shopping');
+Route::post('update-user-info', [UserController::class, 'SaveUserInfo'])->name('user.update');

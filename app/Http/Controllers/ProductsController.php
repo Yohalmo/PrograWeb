@@ -11,13 +11,39 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
-    public function index(){
-        return view('productos.index');
+    public function index($categoria = 0){
+
+        $categorias = Categoria::where('EstadoCategoria', 1)
+        ->leftjoin('categorias_producto as cp', 'cp.IdCategoria', 'categorias.IdCategoria')
+        ->whereNotNull('cp.IdCategoria')->groupBy('cp.IdCategoria')->get('categorias.*');
+
+        if(!$categoria){
+            $categoria = $categorias[0]->IdCategoria ?? 0;
+        }
+
+        $productos = $this->GetInfoProducts($categoria);
+
+        return view('productos.index', compact('categorias', 'productos', 'categoria'));
     }
 
     public function ListaProductos(){
         $productos = Producto::paginate()->withPath(route('buscar-productos'));
         return view('productos.listado', compact('productos'));
+    }
+
+    private function GetInfoProducts($categoria, $vista = 0){
+
+        return Producto::where('ProductoEstado', 1)
+            ->join('categorias_producto as cp', 'cp.IdProducto', 'productos.IdProducto')
+            ->where('IdCategoria', $categoria)->paginate(3)
+            ->withPath(route('search-products', [$categoria, $vista]));
+    }
+
+    public function ProductsCategory($categoria, $vista){
+        $productos = $this->GetInfoProducts($categoria, $vista);
+        $mostrar = 1;
+
+        return view('productos.products-itemtab', compact('productos', 'mostrar'));
     }
 
     public function Buscar(Request $request){

@@ -26,6 +26,16 @@ $("body").on("click", ".page-link", function(event){
     }
 });
 
+$("body").on("click", ".category-item", function(){
+    let categoria = $(this).attr('categoria');
+    let contenedor = `#category-content-${categoria}`;
+    let productos = $(contenedor).find('.product-category-item').length;
+
+    if(!productos){
+        MakeRequestData(`${$('.link-consulta').html()}/${categoria}/0`, contenedor, true);
+    }
+});
+
 $('body').on('change', '.previsualizar-imagen', function(){
 
     // Obtener la imagen seleccionada por el usuario
@@ -247,9 +257,7 @@ function ErrorRequest(response){
 function LoadingAlert(){
     Swal.fire({
         type: 'info',
-        html: '<div class="spinner-grow text-white me-2" role="status"><span class="visually-hidden"></span></div>'
-        + '<div class="spinner-grow text-white me-2" role="status"><span class="visually-hidden"></span></div>'
-        + '<div class="spinner-grow text-white" role="status"><span class="visually-hidden"></span></div>',
+        html: '<div><strong>Cargando...</strong></div>',
         allowOutsideClick: false,
         showConfirmButton: false,
         width: 170,

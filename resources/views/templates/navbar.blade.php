@@ -64,7 +64,7 @@
                     </div>
                 </li>
             @else
-                <a href="" class="btn-main"><strong>Registrarse</strong></a>
+                <a href="{{ route('usuario.registro') }}" class="btn-main"><strong>Registrarse</strong></a>
                 <a href="{{route('login')}}" class="btn-main"><strong>Iniciar sesión</strong></a>
             @endif
         </li>
