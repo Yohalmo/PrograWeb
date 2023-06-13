@@ -90,3 +90,4 @@ Route::post('/editar-producto-car', [ShoppingController::class, 'EditShoppingCar
 
 
 Route::get('/producto',[ProductsController::class,'Producto'])->name('Products-purchase');
+Route::get('/verificar-usuario',[UserController::class,'VerificarUsuario'])->name('verificar-usuario');

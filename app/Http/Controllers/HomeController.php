@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailMailable;
 use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
     public function LandingPage(){
-
         $productos = Producto::limit(6)->where('ProductoEstado', 1)->orderby(DB::raw('rand()'))->get();
 
         $categorias = Categoria::whereNotNull('IdProducto')->where('EstadoCategoria', 1)

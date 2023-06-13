@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailMailable;
 use App\Models\Usuario;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -28,6 +30,7 @@ class UserController extends Controller
     public function SaveUserInfo(Request $request){
         $UrlBack = route('user.index');
         $usuario = Usuario::find($request->usuario);
+        $enviarMail = false;
 
         if(!isset($usuario->IdUsuario)){
             $usuario = new Usuario();
@@ -37,8 +40,10 @@ class UserController extends Controller
                 return response()->json('^Ya existe un usuario con ese correo', 500);
             }
 
-            $usuario->EstadoUsuario = 1;
+            $usuario->EstadoUsuario = 0;
+            $usuario->TokenUsuario = md5(uniqid($request->correo, true));
             $UrlBack = route('login');
+            $enviarMail = true;
         }
 
         $usuario->NombresUsuario = $request->nombres;
@@ -47,8 +52,8 @@ class UserController extends Controller
         $usuario->DireccionUsuario = $request->direccion;
         $usuario->CorreoUsuario = $request->correo;
 
-        if(isset($request->pass) && strlen($request->password) > 0){
-            $usuario->PasswordUsuario = Hash::make($request->password, PASSWORD_DEFAULT);
+        if(isset($request->password) && strlen($request->password) > 0){
+            $usuario->PasswordUsuario = password_hash($request->password, PASSWORD_DEFAULT);
         }
 
         if(isset($request->roles)){
@@ -56,7 +61,19 @@ class UserController extends Controller
         }
 
         $usuario->save();
+
+        if($enviarMail){
+            $datos = ['url' => route('verificar-usuario') . "?token=$usuario->TokenUsuario",
+            'usuario' => $usuario->NombresUsuario];
+            Mail::to($request->correo)->send(new MailMailable('Verificación de correo', 'verificacion', $datos));
+        }
+
         return $UrlBack;
+    }
+
+    public function VerificarUsuario(Request $request){
+        Usuario::where('TokenUsuario', $request->token)->update(['TokenUsuario' => '', 'EstadoUsuario' => 1]);
+        return redirect(route('home'));
     }
 
     public function DesahabilitarUsuario(Request $request){
