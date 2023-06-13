@@ -68,8 +68,9 @@
                                     {{$item->productos}} productos
                                 </p>
                                 <a class="bg-black text-white mt-auto ms-auto
-                                            button-container text-center pe-3 ps-3"
-                                            href="{{route('productos', [$item->IdCategoria])}}">
+                                        button-container text-center pe-3 ps-3"
+                                        aria-label="Lleva  alos productos dentro de la categoria seleccionada"
+                                        href="{{route('productos', [$item->IdCategoria])}}">
                                     <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
