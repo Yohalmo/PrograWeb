@@ -28,6 +28,7 @@ class ProductsController extends Controller
 
     public function ListaProductos(){
         $productos = Producto::paginate()->withPath(route('buscar-productos'));
+        return view('productos.listado', compact('productos'));
     }
 
     public function Producto(){

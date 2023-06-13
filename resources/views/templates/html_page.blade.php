@@ -15,7 +15,10 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" media="all">
 
 
-        <script src="{{asset('js/jquery.min.js')}}" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+            crossorigin="anonymous"></script>
+
+        <script src="{{asset('js/jquery.min.js')}}"></script>
 
     @yield('scriptsHeader')
     </header>
@@ -53,18 +56,15 @@
         </div>
     </body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
-    crossorigin="anonymous" async defer></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous" async defer></script>
+    crossorigin="anonymous" ></script>
 
-    <script src="https://kit.fontawesome.com/35b4dfd2b7.js" async defer crossorigin="anonymous"></script>
-    <script src="{{asset('js/bootstrap-validate.js')}}" async defer></script>
-    <script src="{{asset('js/scripts.js')}}" async defer></script>
-    <script src="{{asset('js/bootstrap.bundle.min.js')}}" async defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" async defer></script>
-    <script src="{{asset('js/index.js')}}" async defer></script>
+    <script src="https://kit.fontawesome.com/35b4dfd2b7.js"  crossorigin="anonymous"></script>
+    <script src="{{asset('js/bootstrap-validate.js')}}" ></script>
+    <script src="{{asset('js/scripts.js')}}" ></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}" ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
+    <script src="{{asset('js/index.js')}}" ></script>
 
     <script>
         let navegador = navigator.userAgent;

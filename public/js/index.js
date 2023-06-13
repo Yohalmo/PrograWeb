@@ -26,6 +26,16 @@ $("body").on("click", ".page-link", function(event){
     }
 });
 
+$('body').on('change', '#BuscadorProductos', function(){
+    if($(this).val() == ''){
+        $('#lstBusqueda').html('');
+        $('#TabBusqueda').addClass('d-none');
+    }else{
+        $('#TabBusqueda').removeClass('d-none');
+        $('#TabInicial').addClass('d-none');
+    }
+});
+
 $("body").on("click", ".category-item", function(){
     let categoria = $(this).attr('categoria');
     let contenedor = `#category-content-${categoria}`;

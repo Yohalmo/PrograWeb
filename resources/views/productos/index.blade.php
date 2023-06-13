@@ -4,8 +4,11 @@
 
     <div hidden class="link-consulta">{{route('search-products')}}</div>
 
+    <div class="col-11 m-auto d-none" id="TabBusqueda">
+        <div class="row" id="lstBusqueda"></div>
+    </div>
 
-    <div class="col-11 m-auto">
+    <div class="col-11 m-auto" id="TabInicial">
         <div class="text-black mb-2"><strong>Categorias</strong></div>
 
         <ul class="nav nav-pills mb-3 lista-horizontal" id="pills-tab"  role="tablist">

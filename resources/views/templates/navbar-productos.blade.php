@@ -13,7 +13,8 @@
     <strong class="text-black text-center">Muebles y diseños el roble</strong>
 
     <div class="input-group mt-2">
-        <input type="text" class="form-control text-white" style="background: #C77353;" aria-label="Name">
+        <input type="text" class="form-control text-white" style="background: #C77353;" aria-label="Name"
+        id="BuscadorProductos">
         <button class="btn text-white border-0 btn-buscador" aria-label="Buscar">
             <i class="fas fa-search"></i>
         </button>
@@ -25,7 +26,7 @@
         </li>
 
         <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
-            <a class="btn color-secondary btn-car" href="{{route('shopping-car')}}">
+            <a class="btn color-secondary btn-car" href="{{route('shopping-car')}}" aria-label="listado de compras">
                 <i class="fas fa-shopping-cart"></i>
                 <div id="div-notificaciones">
                     @include('home.notificacion-item')

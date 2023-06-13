@@ -7,7 +7,7 @@
 
     @slot('body')
         <div class="row">
-            <div class="col-6">
+            <div class="col-xl-6 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Categorias disponibles</div>
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-xl-6 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Categorias asignadas</div>
