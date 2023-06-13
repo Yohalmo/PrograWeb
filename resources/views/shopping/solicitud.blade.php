@@ -9,20 +9,31 @@
 @section('body')
 
     <div class="row">
-        <div class="col-xl-6 col-md-6 col-sm-12" id="map">
+        <div class="col-xl-6 col-md-6 col-sm-12 envio-item" id="map">
         </div>
 
-        <div class="col-xl-6 col-md-6 col-sm-12 p-4">
+        <div class="col-xl-6 col-md-6 col-sm-12 p-4 m-auto">
             <form action="" class="card shadow-none" style="border-radius: 15px">
                 @csrf
                 <div class="card-body">
-                    <div class="text-center text-black"><strong>Formulario de envio</strong></div>
+                    <div class="text-center text-black mb-3"><strong>Formulario de envio</strong></div>
+
+                    <div class="row col-12">
+                        <button type="button" onclick="TipoEntrega(2)" id="btn2" class="btn main-color col-xl-6 col-md-12 col-sm-12">A domicilio</button>
+                        <button type="button" onclick="TipoEntrega(1)" id="btn1" class="btn border-black col-xl-6 col-md-12 col-sm-12">Para recoger</button>
+                    </div>
                     <hr>
 
-                    <div class="form-group">
-                        <label class="form-label required text-black">Ubicación GPS</label>
-                        <input type="text" class="form-control mb-3" id="coordenadas" name="coordenadas" required
-                        onfocus="$(this).prop('readonly', true)" onfocusout="$(this).prop('readonly', false)">
+                    <div id="entrega" class="envio-item">
+                        <div class="form-group">
+                            <label class="form-label required text-black">Ubicación GPS</label>
+                            <input type="text" class="form-control mb-3" id="coordenadas" name="coordenadas"
+                            onfocus="$(this).prop('readonly', true)" onfocusout="$(this).prop('readonly', false)">
+                        </div>
+                    </div>
+
+                    <div id="recoger" class="recoger-item d-none">
+
                     </div>
 
                     <button class="btn col-12 btn-success" type="button"><strong>Confirmar</strong></button>

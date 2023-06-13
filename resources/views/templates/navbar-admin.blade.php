@@ -51,7 +51,7 @@
                         </h6>
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="#" aria-label="editar">
                             <div class="text-center p-1"><i class="fas fa-user"></i> &nbsp; Editar información</div>
                         </a>
                         <a class="dropdown-item">
@@ -64,8 +64,8 @@
                     </div>
                 </li>
             @else
-                <a href="" class="btn-main"><strong>Registrarse</strong></a>
-                <a href="{{route('login')}}" class="btn-main"><strong>Iniciar sesión</strong></a>
+                <a href="{{route('register')}}" aria-label="registro" class="btn-main"><strong>Registrarse</strong></a>
+                <a href="{{route('login')}}" aria-label="login" class="btn-main"><strong>Iniciar sesión</strong></a>
             @endif
         </li>
     </ul>

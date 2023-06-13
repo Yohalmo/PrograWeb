@@ -45,7 +45,7 @@
         @endforeach
 
         <div class="col-12 text-end">
-            <a class="btn-mas" href="{{route('productos')}}">Ver más...</a>
+            <a class="btn-mas" aria-label="ver mas" href="{{route('productos')}}">Ver más...</a>
         </div>
     </div>
 
@@ -69,7 +69,7 @@
                                 </p>
                                 <a class="bg-black text-white mt-auto ms-auto
                                         button-container text-center pe-3 ps-3"
-                                        aria-label="Lleva  alos productos dentro de la categoria seleccionada"
+                                        aria-label="Lleva a los productos dentro de la categoria seleccionada"
                                         href="{{route('productos', [$item->IdCategoria])}}">
                                     <i class="fas fa-arrow-right"></i></a>
                             </div>
@@ -82,7 +82,7 @@
         @endforeach
 
         <div class="col-12 text-end">
-            <a class="btn-mas" href="{{route('productos')}}">Ver más...</a>
+            <a class="btn-mas" aria-label="ver mas" href="{{route('productos')}}">Ver más...</a>
         </div>
     </div>
 </div>

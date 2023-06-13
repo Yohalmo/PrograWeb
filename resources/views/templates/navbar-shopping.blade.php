@@ -20,10 +20,10 @@
 
         <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-5 ">
             @if (Session::has('user-info'))
-                <a href="" class="btn-btn-main">Enviar orden</a>
+                <a href="{{route('enviar-solicitud')}}" aria-label="enviar orden" class="btn btn-main">Enviar orden</a>
             @else
-                <a href="{{ route('usuario.registro') }}" class="btn-main"><strong>Registrarse</strong></a>
-                <a href="{{route('login')}}" class="btn-main"><strong>Iniciar sesión</strong></a>
+                <a href="{{ route('usuario.registro') }}" aria-label="registro" class="btn-main"><strong>Registrarse</strong></a>
+                <a href="{{route('login')}}" aria-label="login" class="btn-main"><strong>Iniciar sesión</strong></a>
             @endif
         </li>
     </ul>
