@@ -9,7 +9,7 @@
         </button>
     @endcan
 
-    <div class="position-relative me-2 ms-2 card bg-white" style="border-radius:20px">
+    <div class="position-relative me-2 ms-2 card bg-white ocultar-moviles" style="border-radius:20px">
         <div class="card-body ps-3 pe-3 pt-1 pb-1 text-black">
             <strong>Muebles y diseños el roble</strong>
         </div>

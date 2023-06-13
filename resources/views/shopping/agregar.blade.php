@@ -36,7 +36,7 @@
             <div class="row">
 
                 <div class="col-xl-6 col-md-6 col-sm-12">
-                    <img class="img-fluid" src="{{ url($Producto->ProductoImagen) }}"
+                    <img class="img-fluid" src="{{ url($Producto->ProductoImagen) }}" style="max-height: 250px"
                         alt="{{ $Producto->ProductoNombre }}">
                 </div>
 
@@ -56,7 +56,7 @@
                                 <input type="text" onfocus="$(this).attr('readonly', true)"
                                         onfocusout="$(this).attr('readonly', false)"
                                         id="cantidad" name="cantidad"
-                                        class="input-shopping" value="1" min="0">
+                                        class="input-shopping" value="{{ $request->cantidad ?? 1 }}" min="0">
 
                                 <button class="btn-shopping-modal btn-success" type="button"
                                     onclick="calcular(true)">
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="card-footer text-end text-black">
-                           <strong>Total: $ <span id="TotalProducto">{{$Producto->ProductoPrecio}}</span></strong>
+                           <strong>Total: $ <span id="TotalProducto">{{ number_format($Producto->ProductoPrecio * ($request->cantidad ?? 1), 2)}}</span></strong>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,14 @@
             Cancelar</button>
 
         <button type="button" class="btn text-white" style="background-color: #8A2723"
-            onclick="MakeRequestData( '{{ route('add-shopping') }}',
-            '#div-notificaciones', true, '#modal-principal', 'POST', 2, '#FrmProduct', false, true)">
+            @if (isset($request->cantidad))
+                onclick="MakeRequestData( '{{ route('edit-car-shopping') }}',
+                '{{$request->contenedor}}', true, '#modal-principal', 'POST', 3, '#FrmProduct', false, true, [], EditShopping)"
+            @else
+                onclick="MakeRequestData( '{{ route('add-shopping') }}',
+                '#div-notificaciones', true, '#modal-principal', 'POST', 2, '#FrmProduct', false, true)"
+            @endif
+            >
             &nbsp;&nbsp;&nbsp;Guardar
         </button>
     @endslot

@@ -182,6 +182,17 @@ function MakeRequestData(Url, ItemReplace, HideLoad = false, ModalName = '', typ
     }
 }
 
+function EditShopping(ItemReplace, accion, response, params){
+    SetDataResult(ItemReplace, accion, response, params);
+    let subtotal = 0;
+
+    $('.subtotal-item').each(function(){
+        subtotal += parseFloat($(this).html());
+    })
+
+    $('.total-shopping').html(subtotal.toFixed(2));
+}
+
 function AlertWait(ItemReplace, accion, response){
 
     response += '|0|0'

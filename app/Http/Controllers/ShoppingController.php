@@ -60,7 +60,20 @@ class ShoppingController extends Controller
         $productos = Session::get('shooping-car', []);
         $productos[$request->producto]['cantidad'] = $request->cantidad;
         Session::put('shooping-car', $productos);
+        $item = Producto::find($request->producto);
 
+        $cantidad = $request->cantidad;
+        $Subtotal = $cantidad * $item->ProductoPrecio;
+
+        if($request->cantidad){
+            return view('shopping.data', compact('item', 'cantidad', 'Subtotal'));
+        }
+    }
+
+    public function DeleteShopping(Request $request){
+        $productos = Session::get('shooping-car', []);
+        unset($productos[$request->producto]);
+        Session::put('shooping-car', $productos);
     }
 
     public function SaveOrder(Request $request){

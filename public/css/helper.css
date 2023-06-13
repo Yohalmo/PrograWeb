@@ -239,3 +239,8 @@ select {
     flex-wrap: nowrap !important;
 }
 
+@media (max-width: 767px) {
+    .ocultar-moviles {
+        display: none !important;
+    }
+  }

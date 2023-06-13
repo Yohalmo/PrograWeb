@@ -85,6 +85,8 @@ Route::post('/agregar-producto', [ShoppingController::class, 'AddProductModal'])
 Route::post('/add-shopping-car', [ShoppingController::class, 'AddProductShopping'])->name('add-shopping');
 Route::post('update-user-info', [UserController::class, 'SaveUserInfo'])->name('user.update');
 Route::get('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
+Route::post('/eliminar-producto', [ShoppingController::class, 'DeleteShopping'])->name('delete-shopping');
+Route::post('/editar-producto-car', [ShoppingController::class, 'EditShoppingCar'])->name('edit-car-shopping');
 
 
 Route::get('/producto',[ProductsController::class,'Producto'])->name('Products-purchase');
