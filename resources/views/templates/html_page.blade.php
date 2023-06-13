@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,11 +15,10 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" >
 
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
             crossorigin="anonymous"></script>
 
-    <script src="{{asset('js/jquery.min.js')}}"></script>
+        <script src="{{asset('js/jquery.min.js')}}"></script>
 
     @yield('scriptsHeader')
     </header>
@@ -65,7 +64,6 @@
     <script src="{{asset('js/scripts.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{asset('js/jquery.mask.js')}}"></script>
     <script src="{{asset('js/index.js')}}"></script>
 
     <script>
