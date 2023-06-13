@@ -28,7 +28,8 @@
         <div class="col-xl-2 col-md-4 col-sm-12 p-2">
             <div class="d-flex justify-content-center">
                 <div class="m-auto p-auto">
-                    <a class="btn rounded-circle bg-white" id="ancla-home" href="#layoutSidenav_content">
+                    <a class="btn rounded-circle bg-white" id="ancla-home" href="#layoutSidenav_content"
+                        aria-label="Lleva al inicio de la pagina">
                         <span hidden>Ver inicio</span>
                         <i class="fas fa-arrow-up" id="icono-ancla" aria-hidden="true"></i>
                     </a>

@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-2 p-0 m-0 text-center align-middle p-auto">
                             <div class="d-flex align-items-center" style="height: 100%">
-                                <button class="button btn btn-success btn-agregar"
+                                <button class="button btn btn-success btn-agregar" aria-label="agregar"
                                     onclick="MakeRequestData( '{{ route('modal-shopping') }}', '.modal-content', true,
                                     '#modal-principal', 'POST', 2, '', false, false, ['producto/{{$producto->IdProducto}}'])">
                                     <i class="fas fa-plus"></i>

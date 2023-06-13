@@ -13,8 +13,8 @@
     <strong class="text-black text-center">Muebles y diseños el roble</strong>
 
     <div class="input-group mt-2">
-        <input type="text" class="form-control text-white" style="background: #C77353;">
-        <button class="btn text-white border-0 btn-buscador">
+        <input type="text" class="form-control text-white" style="background: #C77353;" aria-label="Name">
+        <button class="btn text-white border-0 btn-buscador" aria-label="Buscar">
             <i class="fas fa-search"></i>
         </button>
     </div>
