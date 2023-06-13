@@ -37,7 +37,7 @@
                 <div class="card card-producto shadow-sm">
                     <img class="card-img-top img-card-producto" height="165" src="{{asset($item->ProductoImagen)}}" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-color-main">{{$item->ProductoNombre}}</h5>
+                        <div class="h5 card-title text-color-main">{{$item->ProductoNombre}}</div>
                         <p class="card-text descripcion-producto">{{ $item->ProductoDescripcion}}</p>
                     </div>
                 </div>

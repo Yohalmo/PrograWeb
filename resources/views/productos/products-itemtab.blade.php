@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="row p-2">
                         <div class="col-10 p-0 m-0">
-                            <h5 class="card-title text-color-main"><strong>{{$producto->ProductoNombre}}</strong></h5>
+                            <div class="h5 card-title text-color-main"><strong>{{$producto->ProductoNombre}}</strong></div>
                             <p class="card-text descripcion-producto">{{ $producto->ProductoDescripcion}}</p>
                         </div>
                         <div class="col-2 p-0 m-0 text-center align-middle p-auto">

@@ -4,12 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta name="description" content="Proyecto USO de diseño web donde se presenta una tienda en linea que permite registrarse, hacer compras y tiene un nivel administrativo que permite hacer los cambios sin necesidad de un programador para realizarlos">
         <meta name="author" content="">
 
         <meta name="_token" content="{{csrf_token()}}"/>
         <title>El Roble</title>
-        <meta name="description" content="Proyecto USO de diseño web">
         @yield('headerData')
 
         <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}">
