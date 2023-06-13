@@ -84,3 +84,7 @@ Route::get('/carrito', [ShoppingController::class, 'index'])->name('shopping-car
 Route::post('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
 Route::post('/add-shopping-car', [ShoppingController::class, 'AddProductShopping'])->name('add-shopping');
 Route::post('update-user-info', [UserController::class, 'SaveUserInfo'])->name('user.update');
+Route::get('/agregar-producto', [ShoppingController::class, 'AddProductModal'])->name('modal-shopping');
+
+
+Route::get('/producto',[ProductsController::class,'Producto'])->name('Products-purchase');

@@ -28,6 +28,14 @@ class ProductsController extends Controller
 
     public function ListaProductos(){
         $productos = Producto::paginate()->withPath(route('buscar-productos'));
+    }
+
+    public function Producto(){
+        return view('productos.index');
+    }
+
+    public function listado(){
+        $productos = Producto::paginate()->withPath(route('buscar->producto'));
         return view('productos.listado', compact('productos'));
     }
 
@@ -122,3 +130,5 @@ class ProductsController extends Controller
         }
     }
 }
+
+
