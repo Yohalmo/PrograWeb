@@ -8,12 +8,8 @@
         <meta name="author" content="">
 
         <meta name="_token" content="{{csrf_token()}}"/>
-        <title></title>
-        <meta http-equiv="Expires" content="0">
-        <meta http-equiv="Last-Modified" content="0">
-        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-
+        <title>El Roble</title>
+        <meta name="description" content="Proyecto USO de diseño web">
         @yield('headerData')
 
         <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}">

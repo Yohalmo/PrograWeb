@@ -111,6 +111,7 @@ select {
     margin-top: 15px;
     color: black;
     font-size: 14px;
+    min-height: 100px;
 }
 
 .img-card-producto{
@@ -158,6 +159,7 @@ select {
 
 .card-category{
     border-radius: 25px !important;
+    height: 110px;
 }
 
 .card-category{

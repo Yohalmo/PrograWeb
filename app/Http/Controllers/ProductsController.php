@@ -43,7 +43,7 @@ class ProductsController extends Controller
 
         return Producto::where('ProductoEstado', 1)
             ->join('categorias_producto as cp', 'cp.IdProducto', 'productos.IdProducto')
-            ->where('IdCategoria', $categoria)->paginate(3)
+            ->where('IdCategoria', $categoria)->paginate(9)
             ->withPath(route('search-products', [$categoria, $vista]));
     }
 

@@ -1,4 +1,4 @@
-@extends('templates.MainTemplate')
+@extends('templates.MainTemplate', ['navbarView' => 'navbar-shopping'])
 
 @section('body')
 
