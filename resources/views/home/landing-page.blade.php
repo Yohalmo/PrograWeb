@@ -5,15 +5,15 @@
 
 <div class="carrucel-container">
 
-    <img src="{{asset('images/banner.jpg')}}" alt="" class="carrucel">
-    <img src="{{asset('images/comedor.jpg')}}" alt="" class="carrucel d-none">
-    <img src="{{asset('images/sofas.jpg')}}" alt="" class="carrucel d-none">
+    @foreach ($carrusel as $key => $item)
+        <img src="{{url($item->ProductoImagen)}}" alt="..." class="carrucel {{ $key ? 'd-none' : '' }}">
+    @endforeach
 
     <div class="indicator-container d-flex justify-content-center">
         <div class="carrucel-indicators text-center">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+            @foreach ($carrusel as $key => $item)
+                <span class="indicator {{ $key ?  : 'active' }} "></span>
+            @endforeach
         </div>
     </div>
 </div>
