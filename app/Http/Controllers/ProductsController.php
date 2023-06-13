@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
-    public function index($categoria = 0){
+    public function index(Request $request, $categoria = 0){
 
         $categorias = Categoria::where('EstadoCategoria', 1)
         ->leftjoin('categorias_producto as cp', 'cp.IdCategoria', 'categorias.IdCategoria')
@@ -21,7 +21,7 @@ class ProductsController extends Controller
             $categoria = $categorias[0]->IdCategoria ?? 0;
         }
 
-        $productos = $this->GetInfoProducts($categoria);
+        $productos = $this->GetInfoProducts($request, $categoria);
 
         return view('productos.index', compact('categorias', 'productos', 'categoria'));
     }
@@ -40,16 +40,24 @@ class ProductsController extends Controller
         return view('productos.listado', compact('productos'));
     }
 
-    private function GetInfoProducts($categoria, $vista = 0){
+    private function GetInfoProducts($request, $categoria, $vista = 0){
 
-        return Producto::where('ProductoEstado', 1)
-            ->join('categorias_producto as cp', 'cp.IdProducto', 'productos.IdProducto')
-            ->where('IdCategoria', $categoria)->paginate(9)
-            ->withPath(route('search-products', [$categoria, $vista]));
+        $info =  Producto::where('ProductoEstado', 1)
+            ->join('categorias_producto as cp', 'cp.IdProducto', 'productos.IdProducto');
+
+        if($categoria){
+            $info = $info->where('IdCategoria', $categoria);
+        }
+
+        if($request->busqueda){
+            $info = $info->where('ProductoNombre', 'like', "%$request->busqueda%");
+        }
+
+        return $info->paginate(9)->withPath(route('search-products', [$categoria, $vista]));
     }
 
-    public function ProductsCategory($categoria, $vista){
-        $productos = $this->GetInfoProducts($categoria, $vista);
+    public function ProductsCategory(Request $request, $categoria, $vista){
+        $productos = $this->GetInfoProducts($request, $categoria, $vista);
         $mostrar = 1;
 
         return view('productos.products-itemtab', compact('productos', 'mostrar'));

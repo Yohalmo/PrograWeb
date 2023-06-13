@@ -14,8 +14,9 @@
 
     <div class="input-group mt-2">
         <input type="text" class="form-control text-white" style="background: #C77353;" aria-label="Name"
-        id="BuscadorProductos">
-        <button class="btn text-white border-0 btn-buscador" aria-label="Buscar">
+        id="BuscadorProductos" onkeyup="if(event.keyCode == 13) MakeSearch()">
+        <button class="btn text-white border-0 btn-buscador" aria-label="Buscar"
+        onclick="MakeSearch()">
             <i class="fas fa-search"></i>
         </button>
     </div>

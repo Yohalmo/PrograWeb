@@ -5,7 +5,7 @@
     <div hidden class="link-consulta">{{route('search-products')}}</div>
 
     <div class="col-11 m-auto d-none" id="TabBusqueda">
-        <div class="row" id="lstBusqueda"></div>
+        <div class="row contentPager" id="lstBusqueda" link='#lstBusqueda'></div>
     </div>
 
     <div class="col-11 m-auto" id="TabInicial">
