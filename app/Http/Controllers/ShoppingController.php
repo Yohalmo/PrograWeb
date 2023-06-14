@@ -86,6 +86,9 @@ class ShoppingController extends Controller
             $orden->FechaOrden = date('Y-m-d H:i:s');
             $orden->IdUsuario = Session::get('user-info')->IdUsuario;
             $orden->ComentarioOrden = $request->comentario;
+            $orden->Coordenadas = $request->coordenadas;
+            $orden->HoraLlegada = $request->hora;
+            $orden->FechaLlegada = $request->fecha;
             $orden->EstadoOrden = 1;
             $orden->save();
 
@@ -102,11 +105,12 @@ class ShoppingController extends Controller
                 'IdOrden' => $orden->IdOrden];
             }
 
+            DB::table('orden_detalle')->insert($detalleProductos);
             Session::forget('shooping-car');
             $orden->TotalOrden = $total;
             $orden->save();
 
-            return "Orden guardada exitosamente|" . route('home');
+            return route('home'). "|personalizado|Orden guardada exitosamente|success";
         });
 
     }

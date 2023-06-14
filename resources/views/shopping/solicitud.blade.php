@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-xl-6 col-md-6 col-sm-12 p-4 m-auto">
-            <form action="" class="card shadow-none" style="border-radius: 15px">
+            <form action="" id="FormOrden" class="card shadow-none" style="border-radius: 15px">
                 @csrf
                 <div class="card-body">
                     <div class="text-center text-black mb-3"><strong>Formulario de envio</strong></div>
@@ -28,15 +28,31 @@
                         <div class="form-group">
                             <label class="form-label required text-black">Ubicación GPS</label>
                             <input type="text" class="form-control mb-3" id="coordenadas" name="coordenadas"
-                            onfocus="$(this).prop('readonly', true)" onfocusout="$(this).prop('readonly', false)">
+                            onfocus="$(this).prop('readonly', true)" onfocusout="$(this).prop('readonly', false)" required>
                         </div>
                     </div>
 
                     <div id="recoger" class="recoger-item d-none">
 
+                        <div class="form-group mb-3">
+                            <label class="form-label required text-black">Fecha</label>
+                            <input type="date" class="form-control mb-3" id="fecha" name="fecha">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label required text-black">Hora</label>
+                            <input type="time" class="form-control mb-3" id="hora" name="hora">
+                        </div>
                     </div>
 
-                    <button class="btn col-12 btn-success" type="button"><strong>Confirmar</strong></button>
+                    <div class="form-group mt-3 mb-3">
+                        <label class="form-label required text-black">Comentarios</label>
+                        <textarea class="form-control" name="comentario" required id="comentario" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <button class="btn col-12 btn-success" type="button"
+                        onclick="MakeRequestData('{{route('guardar-solicitud')}}', '', true, '', 'POST',
+                        5, '#FormOrden', false, false, [], AlertWait)"><strong>Confirmar</strong></button>
                 </div>
             </form>
         </div>

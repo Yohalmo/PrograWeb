@@ -11,9 +11,8 @@
         <title>El Roble</title>
         @yield('headerData')
 
-        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}" media="all">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}" media="all">
-
+        <link rel="stylesheet" type="text/css" href="{{asset('css/helper.css')}}?gyh=vgbj" media="all">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}?tgvbhj=gybuhj" media="all">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
             crossorigin="anonymous"></script>
@@ -64,7 +63,7 @@
     <script src="{{asset('js/scripts.js')}}" ></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}" ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
-    <script src="{{asset('js/index.js')}}" ></script>
+    <script src="{{asset('js/index.js')}}?gybhujnk=cvhbj" ></script>
 
     <script>
         let navegador = navigator.userAgent;

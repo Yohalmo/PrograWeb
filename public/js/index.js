@@ -232,7 +232,7 @@ function AlertWait(ItemReplace, accion, response){
         icon: icono,
         title: titulo,
         confirmButtonText: 'Aceptar',
-        confirmButtonColor: '#293643',
+        confirmButtonColor: '#8A2723',
         showConfirmButton: true,
         }).then(() => {
             SetDataResult(ItemReplace, accion, respuesta[0]);

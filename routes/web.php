@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::prefix('ordenes')/* ->middleware('can:ver-permisos') */->group(function () {
         Route::get('/', [PermisssionController::class, 'index'])->name('permissions.index');
         Route::get('/enviar-solicitud', [ShoppingController::class, 'Envio'])->name('enviar-solicitud');
+        Route::post('/guardar', [ShoppingController::class, 'SaveOrder'])->name('guardar-solicitud');
     });
 
     Route::prefix('permisos')/* ->middleware('can:ver-permisos') */->group(function () {
