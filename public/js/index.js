@@ -303,7 +303,7 @@ function ShowAlert(Titulo, Mensaje, Icono, toastView = true){
         title: Titulo,
         html: Mensaje,
         icon: Icono,
-        confirmButtonColor: '#293643',
+        confirmButtonColor: '#8A2723',
         showConfirmButton: true,
         allowOutsideClick: false,
         toast: toastView,
