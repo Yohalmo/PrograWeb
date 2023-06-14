@@ -53,7 +53,7 @@ class ProductsController extends Controller
             $info = $info->where('ProductoNombre', 'like', "%$request->busqueda%");
         }
 
-        return $info->paginate(9)->withPath(route('search-products', [$categoria, $vista]));
+        return $info->paginate(9)->withPath(route('search-products', [$categoria, $vista]) . "?busqueda=$request->busqueda");
     }
 
     public function ProductsCategory(Request $request, $categoria, $vista){
