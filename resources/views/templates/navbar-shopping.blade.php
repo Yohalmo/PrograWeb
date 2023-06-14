@@ -9,7 +9,7 @@
         </button>
     @endcan
 
-    <div class="position-relative me-2 ms-2 bg-white ocultar-moviles text-black">
+    <div class="position-relative me-2 ms-2 bg-white ocultar-moviles text-black cursor">
         <strong>Muebles y diseños el roble</strong>
     </div>
 

@@ -10,7 +10,7 @@
     @endcan
 
     {{-- <img src="{{ asset('images/logo.png')}}" height="60" alt=""> --}}
-    <strong class="text-black text-center">Muebles y diseños el roble</strong>
+    <strong class="text-black text-center cursor">Muebles y diseños el roble</strong>
 
     <div class="input-group mt-2">
         <input type="text" class="form-control text-white" style="background: #C77353;" aria-label="Name"

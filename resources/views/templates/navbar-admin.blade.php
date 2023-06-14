@@ -9,7 +9,7 @@
         </button>
     @endcan
 
-    <div class="position-relative me-2 ms-2 card bg-white" style="border-radius:20px">
+    <div class="position-relative me-2 ms-2 card bg-white cursor" style="border-radius:20px">
         <div class="card-body ps-3 pe-3 pt-1 pb-1 text-black">
             <strong>Muebles y diseños el roble</strong>
         </div>
@@ -51,9 +51,6 @@
                         </h6>
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#" aria-label="editar">
-                            <div class="text-center p-1"><i class="fas fa-user"></i> &nbsp; Editar información</div>
-                        </a>
                         <a class="dropdown-item">
                             <form id="logoutForm" method="POST" action="{{ route('logout') }}">
                                 <button class="dropdown-item" type="submit"><i class="fas fa-sign-out-alt"></i> &nbsp; Cerrar
