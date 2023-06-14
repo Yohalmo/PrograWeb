@@ -226,8 +226,6 @@ function AlertWait(ItemReplace, accion, response){
     if(respuesta[1] == 'personalizado'){
         titulo = respuesta[2];
         icono = respuesta[3];
-    }else{
-        titulo = (respuesta[2] != '0' ? respuesta[2] : titulo) + (respuesta[1] != '0' ? ` con código ${respuesta[1]}`  : '')
     }
 
     Swal.fire({

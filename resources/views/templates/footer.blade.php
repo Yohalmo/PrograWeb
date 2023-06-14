@@ -15,13 +15,10 @@
             <div class="ps-3 pe-3">
                 <h1 class="text-white"><strong>Contáctanos</strong></h1>
                 <div><strong>Dirección:</strong></div>
-                <div class="">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                    dolor.
-                    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    Donec quam felis, ultricies nec, pell</div>
+                <div class="">Departamento de Sonsonate, municipio de nahuizalco</div>
                 <br>
-                <div><strong>Teléfono:</strong> 1111-1111</div>
-                <div><strong>Correo:</strong> prueba.correos@test.com</div>
+                <div><strong>Teléfono:</strong> 7879-9916</div>
+                <div><strong>Correo:</strong> roblemuebles2@gmail.com</div>
             </div>
         </div>
 

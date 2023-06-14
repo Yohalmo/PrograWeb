@@ -42,7 +42,7 @@ class UserController extends Controller
 
             $usuario->EstadoUsuario = 0;
             $usuario->TokenUsuario = md5(uniqid($request->correo, true));
-            $UrlBack = route('login');
+            $UrlBack = route('login') . '|personalizado|¡Usuario creado exitosamente! Revise su correo para la activación|success';
             $enviarMail = true;
         }
 

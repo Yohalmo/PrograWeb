@@ -22,7 +22,7 @@ registroBtn.addEventListener("click", function(event) {
         alert("Las contraseñas no coinciden. Por favor, verifica.");
     }
 
-    MakeRequestData( urlRegistro, '', true, '', 'POST', 5, '#FrmUser', false, true);
+    MakeRequestData( urlRegistro, '', true, '', 'POST', 5, '#FrmUser', false, true, [], AlertWait);
 });
 
 

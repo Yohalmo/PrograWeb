@@ -57,8 +57,8 @@
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('js/jquery.mask.js')}}"></script>
-    <script src="{{asset('js/index.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/index.js')}}?vhbj=tyyuh"></script>
+    <script src="{{asset('js/main.js')}}?vgbh=fty"></script>
 </body>
 </html>
 
